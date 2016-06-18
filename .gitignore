@@ -2,3 +2,4 @@
 source/.module-cache/
 source/js/bundle.js
 source/js/bundle.min.js
+node_modules/
