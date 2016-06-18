@@ -1,0 +1,31 @@
+{
+  "name": "rtcNoticer-flux",
+  "version": "0.0.1",
+  "description": "rtc noticer",
+  "repository": "https://github.com/jymsy/rtcNoticer-flux",
+  "main": "source/js/app.js",
+  "dependencies": {
+    "classnames": "^2.1.3",
+    "flux": "^2.0.1",
+    "object-assign": "^1.0.0",
+    "react": "^0.12.0"
+  },
+  "devDependencies": {
+    "browserify": "^6.2.0",
+    "envify": "^3.0.0",
+    "reactify": "^0.15.2",
+    "uglify-js": "~2.4.15",
+    "watchify": "^2.1.1"
+  },
+  "scripts": {
+    "start": "watchify -o source/js/bundle.js -v -d source/js/app.js",
+    "build": "browserify . -t [envify --NODE_ENV production] | uglifyjs -cm > source/js/bundle.min.js"
+  },
+  "author": "jymsy",
+  "browserify": {
+    "transform": [
+      "reactify",
+      "envify"
+    ]
+  }
+}
