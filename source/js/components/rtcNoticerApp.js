@@ -10,7 +10,6 @@ var appStore = require('../stores/store.js');
 
 var rtcNoticer = React.createClass({
   render: function() {
-    var focusingOnList = JSON.parse(localStorage.focusingOn);
     return (
       <div>
         <Header />

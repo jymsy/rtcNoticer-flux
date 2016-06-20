@@ -2,9 +2,9 @@
 
 var React = require('react');
 
-var rtcNoticer = require('./components/rtcNoticerApp');
+var RtcNoticer = require('./components/rtcNoticerApp');
 
 React.render(
-  <rtcNoticer />,
+  <RtcNoticer />,
   document.getElementById('content')
 );

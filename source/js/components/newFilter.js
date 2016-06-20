@@ -1,4 +1,5 @@
 var React = require('react');
+var rtcActions = require('../actions/rtcActions');
 
 var NewFilter = React.createClass({
   onSubmit: function(event) {
@@ -9,10 +10,12 @@ var NewFilter = React.createClass({
     var id = idNode.value.trim();
 
     if (name != "" && id != "") {
-        var currentFilter = JSON.parse(localStorage.filter);
-        currentFilter.push({name: name, id:id, lastModifyDate:"1"});
-        localStorage.filter = JSON.stringify(currentFilter);
-        PubSub.publish(reloadFilterEvt);
+        // var currentFilter = JSON.parse(localStorage.filter);
+        // currentFilter.push({name: name, id:id, lastModifyDate:"1"});
+        // localStorage.filter = JSON.stringify(currentFilter);
+        // PubSub.publish(reloadFilterEvt);
+
+        rtcActions.createFilter(id, name);
     }
     nameNode.value = "";
     idNode.value = "";
