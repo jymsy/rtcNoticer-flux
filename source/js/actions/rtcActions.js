@@ -12,10 +12,18 @@ var rtcActions = {
 			name: name
 		});
 	},
+	/**
+	 * delete filter
+	 */
 	deleteFilter: function(id) {
 		rtcDispatcher.dispatch({
 			actionType: rtcConstants.RTC_FILTER_DELETE,
 			id: id
+		});
+	},
+	createFollow: function() {
+		rtcDispatcher.dispatch({
+			actionType: rtcConstants.RTC_FOLLOW_CREATE,
 		});
 	}
 };

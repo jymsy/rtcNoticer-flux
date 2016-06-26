@@ -3,8 +3,8 @@ var assign = require('object-assign');
 var CHANGE_EVENT = 'change';
 
 
-var filterStore = assign({}, EventEmitter.prototype, {
-	getAllFilters: function() {
+var followStore = assign({}, EventEmitter.prototype, {
+	getAllFollows: function() {
 		return JSON.parse(localStorage.filter);
 	},
 	emitChange: function() {
@@ -20,4 +20,4 @@ var filterStore = assign({}, EventEmitter.prototype, {
 	}
 });
 
-module.exports = filterStore;
+module.exports = followStore;

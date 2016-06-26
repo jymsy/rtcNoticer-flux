@@ -10,16 +10,20 @@ var Dispatcher = require('flux').Dispatcher;
 var rtcDispatcher = new Dispatcher();
 
 rtcDispatcher.register(function(action) {
-	var currentFilter = filterStore.getAllFilters();
+
 	switch (action.actionType) {
 		case rtcConstants.RTC_FILTER_CREATE:
+			var currentFilter = filterStore.getAllFilters();
 			currentFilter.push({
 				name: action.name,
 				id: action.id,
 				lastModifyDate: "1"
 			});
+			localStorage.filter = JSON.stringify(currentFilter);
+			filterStore.emitChange();
 			break;
 		case rtcConstants.RTC_FILTER_DELETE:
+			var currentFilter = filterStore.getAllFilters();
 			var deleteIndex;
 			for (var i = currentFilter.length - 1; i >= 0; i--) {
 				if (currentFilter[i].id == action.id) {
@@ -29,12 +33,15 @@ rtcDispatcher.register(function(action) {
 			}
 
 			currentFilter.splice(i, 1);
+			localStorage.filter = JSON.stringify(currentFilter);
+			filterStore.emitChange();
+			break;
+		case rtcConstants.RTC_FOLLOW_CREATE:
 			break;
 		default:
 			break;
 	}
-	localStorage.filter = JSON.stringify(currentFilter);
-	filterStore.emitChange();
+
 });
 
 module.exports = rtcDispatcher;
