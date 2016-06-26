@@ -1,34 +1,34 @@
-
 var React = require('react');
 var FollowingRow = require('./followingRow');
+var followStore = require('../stores/followStore');
+var rtcActions = require('../actions/rtcActions');
 
 var Following = React.createClass({
   getInitialState: function() {
-    var focusingOnList = JSON.parse(localStorage.focusingOn);
     return {
-      list: focusingOnList
+      list: followStore.getAllFollows()
     };
   },
   handleDeleteFocusing: function(item) {
-    var focusingOnList = this.state.list
-    for (var i = focusingOnList.length - 1; i >= 0; i--) {
-        if (focusingOnList[i].id == item.id) {
-            deleteIndex = i;
-            break;
-        }
-    }
+    rtcActions.removeFollow(item.id);
 
-    focusingOnList.splice(i,1);
-    localStorage.focusingOn=JSON.stringify(focusingOnList);
-    this.setState({list: focusingOnList});
   },
   componentDidMount: function() {
-    chrome.runtime.onMessage.addListener(function(message, sender, sendResponse){
-      if(message.type == "addFocusingOn"){
-        var focusingOnList = JSON.parse(localStorage.focusingOn);
-        self.setState({list: focusingOnList});
+    followStore.addChangeListener(this._onChange);
+    chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+      if (message.type == "addFocusingOn") {
+        console.log(message);
+        rtcActions.createFollow();
       }
     }.bind(this));
+  },
+  componentWillUnmount: function() {
+    followStore.removeChangeListener(this._onChange);
+  },
+  _onChange: function() {
+    this.setState({
+      list: followStore.getAllFilters()
+    });
   },
   render: function() {
     var rows = [];

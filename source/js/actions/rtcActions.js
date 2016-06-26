@@ -23,7 +23,13 @@ var rtcActions = {
 	},
 	createFollow: function() {
 		rtcDispatcher.dispatch({
-			actionType: rtcConstants.RTC_FOLLOW_CREATE,
+			actionType: rtcConstants.RTC_FOLLOW_CREATE
+		});
+	},
+	removeFollow: function(id) {
+		rtcDispatcher.dispatch({
+			actionType: rtcConstants.RTC_FOLLOW_DELETE,
+			id: id
 		});
 	}
 };

@@ -5,7 +5,7 @@ var CHANGE_EVENT = 'change';
 
 var followStore = assign({}, EventEmitter.prototype, {
 	getAllFollows: function() {
-		return JSON.parse(localStorage.filter);
+		return JSON.parse(localStorage.focusingOn);
 	},
 	emitChange: function() {
 		this.emit(CHANGE_EVENT);
