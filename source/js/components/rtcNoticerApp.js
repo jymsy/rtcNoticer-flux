@@ -1,14 +1,15 @@
-
-var Header = require('./header.js');
-var OptionsBox = require('./optionBox.js');
-var Following = require('./follow.js');
-var TodayItems = require('./todayItems.js');
-var CurrentFilters = require('./currentFilters.js');
-var NewFilter = require('./newFilter.js');
+var Header = require('./header');
+var OptionsBox = require('./optionBox');
+var Following = require('./follow');
+var TodayItems = require('./todayItems');
+var CurrentFilters = require('./currentFilters');
+var NewFilter = require('./newFilter');
 var React = require('react');
-var appStore = require('../stores/store.js');
+
 
 var rtcNoticer = React.createClass({
+
+
   render: function() {
     return (
       <div>

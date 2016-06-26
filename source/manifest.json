@@ -1,7 +1,7 @@
 {
-  "name" : "rtcNoticer",
-  "version" : "0.1",
-  "description" : "RTC defect noticer",
+  "name": "rtcNoticer",
+  "version": "0.1",
+  "description": "RTC defect noticer",
   "permissions": [
     "cookies",
     "tabs",
@@ -12,15 +12,21 @@
     "webRequestBlocking",
     "contextMenus"
   ],
-  "icons": { "16": "cookie.png", "48": "48.png","128": "128.png"},
+  "icons": {
+    "16": "ax16.ico",
+    "48": "48.png",
+    "128": "128.png"
+  },
   "options_page": "options.html",
-  "background": { "scripts": ["background.js"] },
+  "background": {
+    "scripts": ["background.js"]
+  },
   "browser_action": {
-    "default_icon": "cookie.png",
+    "default_icon": "ax16.ico",
     "default_popup": "popup.html"
   },
   "manifest_version": 2,
-    "web_accessible_resources": [
+  "web_accessible_resources": [
     "48.png"
   ]
 }
