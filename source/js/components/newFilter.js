@@ -10,20 +10,17 @@ var NewFilter = React.createClass({
     var id = idNode.value.trim();
 
     if (name != "" && id != "") {
-        // var currentFilter = JSON.parse(localStorage.filter);
-        // currentFilter.push({name: name, id:id, lastModifyDate:"1"});
-        // localStorage.filter = JSON.stringify(currentFilter);
-        // PubSub.publish(reloadFilterEvt);
-
-        rtcActions.createFilter(id, name);
+      rtcActions.createFilter(id, name);
     }
     nameNode.value = "";
     idNode.value = "";
   },
   render: function() {
-    var inputStyle = {width:'200px'};
+    var inputStyle = {
+      width: '200px'
+    };
     return (
-    <form className="form-inline" onSubmit={this.onSubmit}>
+      <form className="form-inline" onSubmit={this.onSubmit}>
       Add filter:<br/>
       <div className="form-group">
         <input type="text" ref="name" className="form-control" style={inputStyle} placeholder="Name"/>
@@ -38,4 +35,3 @@ var NewFilter = React.createClass({
 });
 
 module.exports = NewFilter;
-

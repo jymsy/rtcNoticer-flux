@@ -1,5 +1,5 @@
 {
-  "name": "rtcNoticer",
+  "name": "rtcNoticer-flux",
   "version": "0.1",
   "description": "RTC defect noticer",
   "permissions": [

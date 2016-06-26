@@ -11,6 +11,12 @@ var rtcActions = {
 			id: id,
 			name: name
 		});
+	},
+	deleteFilter: function(id) {
+		rtcDispatcher.dispatch({
+			actionType: rtcConstants.RTC_FILTER_DELETE,
+			id: id
+		});
 	}
 };
 
