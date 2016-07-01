@@ -17,7 +17,6 @@ var Following = React.createClass({
     followStore.addChangeListener(this._onChange);
     chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
       if (message.type == "addFocusingOn") {
-        console.log(message);
         rtcActions.createFollow();
       }
     }.bind(this));
@@ -27,7 +26,7 @@ var Following = React.createClass({
   },
   _onChange: function() {
     this.setState({
-      list: followStore.getAllFilters()
+      list: followStore.getAllFollows()
     });
   },
   render: function() {
