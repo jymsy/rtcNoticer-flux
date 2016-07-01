@@ -13,7 +13,7 @@
     "contextMenus"
   ],
   "icons": {
-    "16": "ax16.ico",
+    "16": "ax16.png",
     "48": "48.png",
     "128": "128.png"
   },
@@ -22,7 +22,7 @@
     "scripts": ["background.js"]
   },
   "browser_action": {
-    "default_icon": "ax16.ico",
+    "default_icon": "ax16.png",
     "default_popup": "popup.html"
   },
   "manifest_version": 2,
