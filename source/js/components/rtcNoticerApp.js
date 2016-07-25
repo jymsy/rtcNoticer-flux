@@ -13,7 +13,6 @@ var rtcNoticer = React.createClass({
   render: function() {
     return (
       <div>
-        <Header />
         <div className="left-panel">
           <Following />
           <CurrentFilters />

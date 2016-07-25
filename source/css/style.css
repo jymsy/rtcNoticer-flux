@@ -46,5 +46,43 @@ h2 {
   position: absolute;
   width: 35%;
   right: 0;
-  top: 85px;
+  top: 0;
+}
+
+.newItems-list {
+  overflow: auto;
+  height: 570px;
+}
+
+#focusingOn {
+  min-height: 400px;
+}
+
+li.new-item-row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    background: #252525;
+    color: #ebebeb;
+    padding: 15px;
+    height: 75px;
+    -webkit-transition: opacity .25s linear, height .25s linear;
+    transition: opacity .25s linear, height .25s linear;
+    box-shadow: 0px 2px 9px 2px rgba(0,0,0,0.36);
+    margin: 0;
+    overflow: hidden;
+    text-align: left;
 }

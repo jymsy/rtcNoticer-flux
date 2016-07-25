@@ -7,7 +7,7 @@ var NewDefectRow = React.createClass({
   render: function() {
     var link = item_url + this.props.item.id;
     return (
-      <li>
+      <li className = "new-item-row">
         <a href={link} target="_blank">{this.props.item.id} - {this.props.item.summary}</a>
       </li>
     );

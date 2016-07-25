@@ -37,7 +37,7 @@ var TodayItems = React.createClass({
     return (
       <div id="todayItems">
         <h2>Defects since last check:</h2>
-        <ol>{rows}</ol>
+        <ol className="newItems-list">{rows}</ol>
       </div>
     );
   }
