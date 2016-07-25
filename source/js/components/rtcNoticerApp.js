@@ -14,11 +14,15 @@ var rtcNoticer = React.createClass({
     return (
       <div>
         <Header />
-        <OptionsBox />
-        <CurrentFilters />
-        <NewFilter />
-        <Following />
-        <TodayItems />
+        <div className="left-panel">
+          <Following />
+          <CurrentFilters />
+          <NewFilter />
+        </div>
+        <div className="right-panel">
+          <OptionsBox />
+          <TodayItems />
+        </div>
       </div>
     );
   }
