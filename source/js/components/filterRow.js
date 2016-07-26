@@ -9,7 +9,7 @@ var FilterRow = React.createClass({
       <tr>
         <td>{this.props.item.name}</td>
         <td>{this.props.item.id}</td>
-        <td><button onClick={this.handleClick} className="delete_filter btn btn-danger" >Delete</button></td>
+        <td><button onClick={this.handleClick} className="delete_filter btn btn-danger btn-xs" >Delete</button></td>
       </tr>
     );
   }

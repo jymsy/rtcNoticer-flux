@@ -20,7 +20,7 @@ var NewFilter = React.createClass({
       width: '200px'
     };
     return (
-      <form className="form-inline" onSubmit={this.onSubmit}>
+      <form className="form-inline filter-form" onSubmit={this.onSubmit}>
       Add filter:<br/>
       <div className="form-group">
         <input type="text" ref="name" className="form-control" style={inputStyle} placeholder="Name"/>

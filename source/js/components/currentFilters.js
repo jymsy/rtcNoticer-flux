@@ -31,7 +31,7 @@ var CurrentFilters = React.createClass({
     return (
       <section>
         <h2>Current filters:</h2>
-        <div className="row">
+        <div className="row filter-form">
           <div className="col-lg-6">
           <table className="table table-bordered" id="filter">
             <thead>

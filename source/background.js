@@ -111,7 +111,8 @@ function parseResultList(result, filter) {
         var todayItems = JSON.parse(sessionStorage.todayItems);
         var newItem = {
           id: value['labels'][1],
-          summary:value['labels'][2]
+          summary:value['labels'][2],
+          severity: value['labels'][6]
         };
 
         var message = {

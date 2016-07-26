@@ -6,10 +6,23 @@ var item_url = 'https://swgjazz.ibm.com:8017/jazz/web/projects/Social%20CRM%20-%
 var NewDefectRow = React.createClass({
   render: function() {
     var link = item_url + this.props.item.id;
+    var severity = this.props.item.severity || 'Normal';
+    var className = "list-group-item ";
+    switch (severity) {
+        case "Blocker": 
+            className += "list-group-item-danger";
+            break;
+        case "Critical":
+            className += "list-group-item-danger";
+            break;
+        case "Major":
+            className += "list-group-item-info";
+            break;
+        default:
+            className += "list-group-item-warning";
+    }
     return (
-      <li className = "new-item-row">
-        <a href={link} target="_blank">{this.props.item.id} - {this.props.item.summary}</a>
-      </li>
+        <a className = {className} href={link} target="_blank">{this.props.item.id} - {this.props.item.summary}</a>
     );
   }
 });

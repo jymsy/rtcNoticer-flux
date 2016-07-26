@@ -75,7 +75,7 @@ li.new-item-row {
     -webkit-align-content: center;
     -ms-flex-line-pack: center;
     align-content: center;
-    background: #252525;
+    /*background: #252525;*/
     color: #ebebeb;
     padding: 15px;
     height: 75px;
@@ -85,4 +85,8 @@ li.new-item-row {
     margin: 0;
     overflow: hidden;
     text-align: left;
+}
+
+.filter-form {
+  padding-left: 10px;
 }
