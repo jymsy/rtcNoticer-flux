@@ -37,7 +37,7 @@ var Following = React.createClass({
     return (
       <div id="focusingOn">
         <h2>Following:</h2>
-        <ol>{rows}</ol>
+        <div className = "list-group following-list">{rows}</div>
       </div>
     );
   }

@@ -36,7 +36,7 @@ var TodayItems = React.createClass({
     }.bind(this));
     return (
       <div id="todayItems">
-        <h2>Defects since last check:</h2>
+        <h2 className = "title-text">Defects since last check:</h2>
         <div className="newItems-list list-group">{rows}</div>
       </div>
     );

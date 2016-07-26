@@ -4,16 +4,18 @@ var item_url = 'https://swgjazz.ibm.com:8017/jazz/web/projects/Social%20CRM%20-%
 
 
 var FollowingRow = React.createClass({
-  handleClick: function() {
+  handleClick: function(e) {
+
+    e.preventDefault();
     this.props.onDeleted(this.props.item);
   },
   render: function() {
     var link = item_url + this.props.item.id;
     return (
-      <li>
-        <button onClick={this.handleClick} itemid={this.props.item.id} className="delete_focusing btn btn-danger">X</button>
-        <a href={link} target="_blank">{this.props.item.summary}</a>
-      </li>
+        <a className="list-group-item" href={link} target="_blank">
+          {this.props.item.summary}
+          <button type="button" className="close custom-close" aria-label="Close" onClick={this.handleClick} itemid={this.props.item.id}><span aria-hidden="true">&times;</span></button>
+        </a>
     );
   }
 });

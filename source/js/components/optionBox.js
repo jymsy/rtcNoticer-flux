@@ -6,18 +6,22 @@ var OptionsBox = React.createClass({
   },
   render: function() {
     var freq = localStorage.frequency;
+    var customStyle = {
+      "margin-left": "0",
+      "margin-right": "0"
+    };
     return (
       <div id="options">
-        <h2>Options</h2>
-        <div className="row">
+        <h2 className = "title-text">Options:</h2>
+        <div className="row" style={customStyle}>
         <div className="col-lg-9 form-inline">
-          Check new defects every
+          <span className = "normal-text">Check new defects every </span>
           <select className="form-control" defaultValue={freq} onChange={this.handleChange}>
             <option>10</option>
             <option>30</option>
             <option>60</option>
           </select>
-          second(s).<br/>
+          <span className = "normal-text"> second(s).</span><br/>
         </div>
         </div>
       </div>
