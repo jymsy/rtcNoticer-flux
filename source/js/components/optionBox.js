@@ -7,8 +7,8 @@ var OptionsBox = React.createClass({
   render: function() {
     var freq = localStorage.frequency;
     var customStyle = {
-      "margin-left": "0",
-      "margin-right": "0"
+      "marginLeft": "0",
+      "marginRight": "0"
     };
     return (
       <div id="options">

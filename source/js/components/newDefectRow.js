@@ -22,7 +22,7 @@ var NewDefectRow = React.createClass({
             className += "list-group-item-warning";
     }
     return (
-        <a className = {className} href={link} target="_blank">{this.props.item.id} - {this.props.item.summary}</a>
+        <a className = {className} href={link} target="_blank"><span className="item-number">{this.props.item.id}</span> - {this.props.item.summary}</a>
     );
   }
 });
